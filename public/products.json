@@ -1,5 +1,6 @@
 {
-  "products": [{
+  "products": [
+    {
       "id": "1",
       "name": "Cherry",
       "image": "images/Cherry.png",
