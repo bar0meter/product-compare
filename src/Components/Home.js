@@ -14,8 +14,10 @@ class Home extends Component {
 		const index = compareProducts.findIndex(prodId => prodId === id);
 		if (index === -1) {
 			compareProducts.push(id);
-			this.setState({ compareProducts });
+		} else {
+			compareProducts.splice(index, 1);
 		}
+		this.setState({ compareProducts });
 	}
 
 	componentDidMount() {
@@ -26,7 +28,7 @@ class Home extends Component {
 
 	render() {
 		const { products, compareProducts } = this.state;
-		return (	
+		return (
 			<div className="wrapper">
 				<h2>Compare Products</h2>
 				<Products
