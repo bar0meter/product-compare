@@ -1,24 +1,37 @@
-import React from "react";
+import React, { Component } from "react";
 
-const ProductItem = props => {
-	return (
-		<div className="productItem card">
-			<div className="productImage">
-				<img src="/images/Cherry.png" alt=""  />
-			</div>
-			<div className="onhoverDiv">
-				<button>Compare</button>
-			</div>
-			<div className="productDetails">
-				<div className="productDetails-header">
-					<h4>Cherry</h4>
-					<div className="spacer" />
-					<div className="productPrice">$ 1.99</div>
+class ProductItem extends Component {
+	constructor(props) {
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	handleClick() {
+		const id = this.props.product.id;
+		this.props.onAddToCompare(id);
+	}
+
+	render() {
+		const { product } = this.props;
+		return (
+			<div className="productItem card">
+				<div className="productImage">
+					<img src={`/${product.image}`} alt="" />
 				</div>
-				<div className="productDetails-body">Two Cherries</div>
+				<div className="onhoverDiv">
+					<button onClick={this.handleClick}>Compare</button>
+				</div>
+				<div className="productDetails">
+					<div className="productDetails-header">
+						<h4>{product.name}</h4>
+						<div className="spacer" />
+						<div className="productPrice">{product.price}</div>
+					</div>
+					<div className="productDetails-body">{product.description}</div>
+				</div>
 			</div>
-		</div>
-	);
-};
+		);
+	}
+}
 
 export default ProductItem;
