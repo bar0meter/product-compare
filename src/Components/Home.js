@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from "react";
 
 import Products from "./Products/Products";
+import CompareProduct from "./CompareProduct/CompareProduct";
 
 class Home extends Component {
 	constructor(props) {
@@ -35,6 +36,7 @@ class Home extends Component {
 					onCompareProducts={this.handleCompareProducts}
 					products={products}
 				/>
+				<CompareProduct compareProducts={compareProducts} data={products} />
 			</div>
 		);
 	}

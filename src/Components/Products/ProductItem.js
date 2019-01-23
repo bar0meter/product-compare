@@ -18,13 +18,15 @@ class ProductItem extends Component {
 	render() {
 		const { product } = this.props;
 		const { addedToCompare } = this.state;
+		const onhoverDivClassNames = addedToCompare ? 'addedToCompare' : 'onhoverDiv';
+		console.log(onhoverDivClassNames);
 		return (
 			<div className="productItem card">
 				<div className="productImage">
 					<img src={`/${product.image}`} alt="" />
 				</div>
-				<div className="onhoverDiv">
-					<button onClick={this.handleClick}>
+				<div className={onhoverDivClassNames}>
+					<button onClick={this.handleClick} className="onhoverDiv-btn">
 						{addedToCompare ? "Remove" : "Compare"}
 					</button>
 				</div>

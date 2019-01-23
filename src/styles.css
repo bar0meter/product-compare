@@ -4,6 +4,22 @@ body {
 
 .wrapper {
 	padding: 20px;
-	width: 90%;
+	width: 80%;
 	margin: auto;
+}
+
+.bg-red {
+	background: red;
+}
+
+.bg-green {
+	background: green;
+}
+
+.bg-blue {
+	background: blue;
+}
+
+.bg-orange {
+	background: orange;
 }
