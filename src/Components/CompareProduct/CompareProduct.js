@@ -10,24 +10,24 @@ export default class CompareProduct extends Component {
         {compareProducts.length > 1 && (
           <table className="table">
             <thead>
-              <tr>
-                <td />
+              <tr className="table-heading">
+                <th />
                 {data.map((prod, index) => {
                   if (compareProducts.includes(prod.id))
-                    return <td key={index}>{prod.name}</td>;
+                    return <th key={index}>{prod.name}</th>;
                 })}
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Price</td>
+                <td className="tdNames">Price</td>
                 {data.map((prod, index) => {
                   if (compareProducts.includes(prod.id))
                     return <td key={index}>{prod.price}</td>;
                 })}
               </tr>
               <tr>
-                <td>Colors</td>
+                <td className="tdNames">Colors</td>
                 {data.map((prod, index) => {
                   if (compareProducts.includes(prod.id))
                     return (
@@ -40,7 +40,7 @@ export default class CompareProduct extends Component {
                 })}
               </tr>
               <tr>
-                <td>Condition</td>
+                <td className="tdNames">Condition</td>
                 {data.map((prod, index) => {
                   if (compareProducts.includes(prod.id))
                     return <td key={index}>{prod.condition}</td>;
