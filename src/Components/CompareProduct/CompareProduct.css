@@ -1,0 +1,8 @@
+table span {
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	z-index: 100;
+	border-radius: 50%;
+	margin: 2px;
+}
